@@ -27,19 +27,19 @@
 <meta property="og:site_name" content="Leo&#39;s Blog">
 <meta property="og:description" content="记录Hadoop大数据平台部署的的过程，以及其中学到的一些技术和知识，如hdfs，hive，beeline，spark，sqoop等等。记录自己用到过的一些命令，自己一些知识的理解，以及踩的坑......能够搜到的东西就不多写了，记录些自己遇到的问题，以及解决方法">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/hadoop/sqoop-1.png">
-<meta property="og:image" content="http://example.com/hadoop/1.png">
-<meta property="og:image" content="http://example.com/hadoop/2.png">
-<meta property="og:image" content="http://example.com/hadoop/3.png">
-<meta property="og:image" content="http://example.com/hadoop/4.png">
-<meta property="og:image" content="http://example.com/hadoop/5.png">
+<meta property="og:image" content="http://example.com/2022/03/15/hadoop/sqoop-1.png">
+<meta property="og:image" content="http://example.com/2022/03/15/hadoop/1.png">
+<meta property="og:image" content="http://example.com/2022/03/15/hadoop/2.png">
+<meta property="og:image" content="http://example.com/2022/03/15/hadoop/3.png">
+<meta property="og:image" content="http://example.com/2022/03/15/hadoop/4.png">
+<meta property="og:image" content="http://example.com/2022/03/15/hadoop/5.png">
 <meta property="article:published_time" content="2022-03-15T06:35:21.000Z">
-<meta property="article:modified_time" content="2022-09-01T09:28:16.655Z">
+<meta property="article:modified_time" content="2026-06-20T14:43:30.224Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="hadoop">
 <meta property="article:tag" content="sqoop">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/hadoop/sqoop-1.png">
+<meta name="twitter:image" content="http://example.com/2022/03/15/hadoop/sqoop-1.png">
 
 
 <link rel="canonical" href="http://example.com/2022/03/15/hadoop/">
@@ -231,7 +231,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-09-01 17:28:16" itemprop="dateModified" datetime="2022-09-01T17:28:16+08:00">2022-09-01</time>
+      <time title="修改时间：2026-06-20 22:43:30" itemprop="dateModified" datetime="2026-06-20T22:43:30+08:00">2026-06-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -321,7 +321,7 @@
 <h2 id="Sqoop"><a href="#Sqoop" class="headerlink" title="Sqoop"></a>Sqoop</h2><h3 id="什么是Sqoop"><a href="#什么是Sqoop" class="headerlink" title="什么是Sqoop"></a>什么是Sqoop</h3><p>Sqoop是Apache软件基金会提供的开源工具，使用hadoop的MapReduce，进行hadoop和数据库（如Mysql等）之间数据的导入导出。</p>
 <h3 id="Sqoop的安装与配置"><a href="#Sqoop的安装与配置" class="headerlink" title="Sqoop的安装与配置"></a>Sqoop的安装与配置</h3><p>Sqoop官网：<a target="_blank" rel="noopener" href="https://sqoop.apache.org/">https://sqoop.apache.org/</a></p>
 <ol>
-<li>下载并上传至服务器<br> 从官网下载最新稳定版本1.4.7，如图：<br> <img src="/hadoop/sqoop-1.png"><br> 将压缩包上传至服务器，因为可能需要使用hive等相关的工具，所以最好在安装了hive（以及其他需要用到的一些工具，如ZooKeeper等）的服务器上安装Sqoop。<br> 在服务器上解压压缩包:<br> 解压到当前目录：<br> <code>tar -zxvf filename.tar.gz</code><br> 解压到指定目录：<br> <code>tar -zxvf sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz -C /usr/local/</code></li>
+<li>下载并上传至服务器<br> 从官网下载最新稳定版本1.4.7，如图：<br> <img src="/2022/03/15/hadoop/sqoop-1.png"><br> 将压缩包上传至服务器，因为可能需要使用hive等相关的工具，所以最好在安装了hive（以及其他需要用到的一些工具，如ZooKeeper等）的服务器上安装Sqoop。<br> 在服务器上解压压缩包:<br> 解压到当前目录：<br> <code>tar -zxvf filename.tar.gz</code><br> 解压到指定目录：<br> <code>tar -zxvf sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz -C /usr/local/</code></li>
 <li>修改配置文件<code>sqoop-env.sh</code><br> 进入sqoop目录下conf文件夹，复制配置文件模板：<br> <code>cp sqoop-env-template.sh sqoop-env.sh</code><br> 进入配置文件并设置hadoop和hive的路径： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vi sqoop-env.sh</span><br><span class="line"></span><br><span class="line">export HADOOP_COMMON_HOME=/usr/local/hadoop-3.3.0/</span><br><span class="line">export HADOOP_MAPRED_HOME=/usr/local/hadoop-3.3.0/</span><br><span class="line">export HIVE_HOME=/usr/local/apache-hive-3.1.2-bin</span><br></pre></td></tr></table></figure></li>
 <li>将mysql的驱动包mysql-connector-java-5.1.46.jar 复制到Sqoop安装目录下的lib文件夹中。<br> 下载commons-lang-2.6.jar并放于Sqoop安装目录下lib文件夹中：<br> 清华源下载链接：<br> <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/apache//commons/lang/binaries/commons-lang-2.6-bin.zip">https://mirrors.tuna.tsinghua.edu.cn/apache//commons/lang/binaries/commons-lang-2.6-bin.zip</a><br> 下载完成后解压，即可得到commons-lang-2.6.jar文件</li>
 <li>配置环境变量 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 若/etc/profile文件不可编辑，需修改为可编辑</span><br><span class="line">chmod -v u+v /etc/profile</span><br><span class="line"></span><br><span class="line">vi /etc/profile</span><br><span class="line"></span><br><span class="line"># 在最后一行加。其中SQOOP_HOME 为sqoop安装路径</span><br><span class="line">export SQOOP_HOME=/usr/local/sqoop-1.4.7.bin__hadoop-2.6.0</span><br><span class="line">export PATH=$PATH:$SQOOP_HOME/bin</span><br><span class="line"></span><br><span class="line"># 让修改立即生效</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
@@ -349,11 +349,11 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">2022-03-16 20:38:44,625 INFO mapreduce.Job: Job job_1646808313962_0051 running in uber mode : false</span><br><span class="line">2022-03-16 20:38:44,629 INFO mapreduce.Job:  map 0% reduce 0%</span><br><span class="line">2022-03-16 20:38:51,916 INFO mapreduce.Job:  map 100% reduce 0%</span><br><span class="line">2022-03-16 20:38:52,937 INFO mapreduce.Job: Job job_1646808313962_0051 failed with state FAILED due to: Task failed task_1646808313962_0051_m_000000</span><br><span class="line">Job failed as tasks failed. failedMaps:1 failedReduces:0 killedMaps:0 killedReduces: 0</span><br><span class="line"></span><br><span class="line">2022-03-16 20:38:53,398 INFO mapreduce.Job: Counters: 8</span><br><span class="line">	Job Counters </span><br><span class="line">		Failed map tasks=1</span><br><span class="line">		Launched map tasks=1</span><br><span class="line">		Rack-local map tasks=1</span><br><span class="line">		Total time spent by all maps in occupied slots (ms)=4146</span><br><span class="line">		Total time spent by all reduces in occupied slots (ms)=0</span><br><span class="line">		Total time spent by all map tasks (ms)=4146</span><br><span class="line">		Total vcore-milliseconds taken by all map tasks=4146</span><br><span class="line">		Total megabyte-milliseconds taken by all map tasks=4245504</span><br><span class="line">2022-03-16 20:38:53,443 WARN mapreduce.Counters: Group FileSystemCounters is deprecated. Use org.apache.hadoop.mapreduce.FileSystemCounter instead</span><br><span class="line">2022-03-16 20:38:53,453 INFO mapreduce.ExportJobBase: Transferred 0 bytes in 53.0633 seconds (0 bytes/sec)</span><br><span class="line">2022-03-16 20:38:53,476 WARN mapreduce.Counters: Group org.apache.hadoop.mapred.Task$Counter is deprecated. Use org.apache.hadoop.mapreduce.TaskCounter instead</span><br><span class="line">2022-03-16 20:38:53,484 INFO mapreduce.ExportJobBase: Exported 0 records.</span><br><span class="line">2022-03-16 20:38:53,484 ERROR mapreduce.ExportJobBase: Export job failed!</span><br><span class="line">2022-03-16 20:38:53,485 ERROR tool.ExportTool: Error during export: </span><br><span class="line">Export job failed!</span><br><span class="line">	at org.apache.sqoop.mapreduce.ExportJobBase.runExport(ExportJobBase.java:445)</span><br><span class="line">	at org.apache.sqoop.manager.SqlManager.exportTable(SqlManager.java:931)</span><br><span class="line">	at org.apache.sqoop.tool.ExportTool.exportTable(ExportTool.java:80)</span><br><span class="line">	at org.apache.sqoop.tool.ExportTool.run(ExportTool.java:99)</span><br><span class="line">	at org.apache.sqoop.Sqoop.run(Sqoop.java:147)</span><br><span class="line">	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)</span><br><span class="line">	at org.apache.sqoop.Sqoop.runSqoop(Sqoop.java:183)</span><br><span class="line">	at org.apache.sqoop.Sqoop.runTool(Sqoop.java:234)</span><br><span class="line">	at org.apache.sqoop.Sqoop.runTool(Sqoop.java:243)</span><br><span class="line">	at org.apache.sqoop.Sqoop.main(Sqoop.java:252)</span><br></pre></td></tr></table></figure>
 <p>我遇到的，基本都是直接map部分从0到100%，然后出这个错误，但是从这里看不错任何错误的原因，最终在网上找到调试的方法。<br>首先要配置好yarn的web端管理界面。在hadoop安装目录下，进入&#x2F;etc&#x2F;hadoop&#x2F;目录，<code>vi yarn-site.xml</code> 打开yarn的配置文件，增加：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">        &lt;property&gt;</span><br><span class="line">                 &lt;name&gt;yarn.resourcemanager.webapp.address&lt;/name&gt;</span><br><span class="line">                 &lt;value&gt;cpu-node2:8088&lt;/value&gt;</span><br><span class="line">         &lt;/property&gt;</span><br></pre></td></tr></table></figure>
-<p>指定web端yarn管理界面的端口，其中，cpu-node2是配置ResourceManager的节点。<br>用自己电脑中的浏览器访问上述网址，我使用的是win10系统，在<code>C:\Windows\System32\drivers\etc\host</code>文件中配置域名ip映射，将cpu-node2 与 其ip地址建立映射关系，之后便可以在浏览器里使用cpu-node2代替服务器ip。因为在web端的yarn管理界面中，点击任何东西之后跳转的界面，都使用cpu-node2，而非服务器ip，若不配置，则浏览器无法访问新界面。配置好之后，在浏览器里输入web端管理界面网址，便可以进入yarn管理界面了，如图：<br><img src="/hadoop/1.png" alt="yarn管理界面"></p>
-<p>选择失败的一个job，点击对应id，进入以下页面:<br><img src="/hadoop/2.png"></p>
-<p>点击logs按钮，进入日志界面：<br><img src="/hadoop/3.png"></p>
-<p>点击系统日志项：<br><img src="/hadoop/4.png"></p>
-<p>点击here打开全部日志：<br><img src="/hadoop/5.png"></p>
+<p>指定web端yarn管理界面的端口，其中，cpu-node2是配置ResourceManager的节点。<br>用自己电脑中的浏览器访问上述网址，我使用的是win10系统，在<code>C:\Windows\System32\drivers\etc\host</code>文件中配置域名ip映射，将cpu-node2 与 其ip地址建立映射关系，之后便可以在浏览器里使用cpu-node2代替服务器ip。因为在web端的yarn管理界面中，点击任何东西之后跳转的界面，都使用cpu-node2，而非服务器ip，若不配置，则浏览器无法访问新界面。配置好之后，在浏览器里输入web端管理界面网址，便可以进入yarn管理界面了，如图：<br><img src="/2022/03/15/hadoop/1.png" alt="yarn管理界面"></p>
+<p>选择失败的一个job，点击对应id，进入以下页面:<br><img src="/2022/03/15/hadoop/2.png"></p>
+<p>点击logs按钮，进入日志界面：<br><img src="/2022/03/15/hadoop/3.png"></p>
+<p>点击系统日志项：<br><img src="/2022/03/15/hadoop/4.png"></p>
+<p>点击here打开全部日志：<br><img src="/2022/03/15/hadoop/5.png"></p>
 <p>在这里，我们便可以看到出错信息，原因是一个数据无法解析。出现这个问题的原因有很多，需要自己尝试。可能是编码错误，可能是分隔符用错了，可能是有些数据中有特殊字符无法解析，hive的文件存储格式应该为textfile（默认格式）等等。但我这里虽然也遇到了这个问题，但原因不在此。此前有成功从hive导入到mysql的情况，但是后来发现数据虽然成功导入到mysql了，但是数据的字段顺序是乱的，所以需要使用–columns 参数，人为指定存到mysql中的字段顺序。加了–columns参数后，该问题便成功解决。</p>
 <p>遇到的另外一个错误的columns not null 的问题，这个问题主要是mysql中某字段设置了非null，然后由于各种问题，解析出的某字段的数据为null时，就会得到mysql的columns not null 的错误。解决方法为：mysql字段设置可为null，或者通过上述sqoop命令，指定null值替换。</p>
 
