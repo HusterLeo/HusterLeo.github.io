@@ -1385,7 +1385,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ff5469;
+    background: #ffff9f;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2916,7 +2916,7 @@ header.header {
   }
 }
 .utterances {
-  max-width: 500px !important;
+  max-width: 100% !important;
   width: 100% !important;
   padding: 0 !important;
 }
@@ -2924,7 +2924,7 @@ header.header {
   background: rgba(255,255,255,0.85);
 }
 body {
-  background: url("/images/29.png");
+  background: url("/images/109.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
