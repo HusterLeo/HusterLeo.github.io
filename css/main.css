@@ -1385,7 +1385,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #cd63a8;
+    background: #ff5469;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2914,4 +2914,48 @@ header.header {
   .comments {
     padding: 10px 12px;
   }
+}
+.utterances {
+  max-width: 500px !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+.sidebar {
+  background: rgba(255,255,255,0.85);
+}
+body {
+  background: url("/images/29.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+.main-inner > .sub-menu,
+.main-inner > .post-block,
+.main-inner > .tabs-comment,
+.main-inner > .comments,
+.main-inner > .pagination {
+  background: rgba(245,245,245,0.42);
+}
+body {
+  color: #000;
+}
+.posts-expand .post-title-link {
+  color: #000;
+}
+.posts-expand .post-meta-container {
+  color: #800;
+}
+.sidebar {
+  opacity: 0.7;
+}
+.header-inner {
+  background: rgba(255,255,255,0.7);
+}
+.popup {
+  opacity: 0.5;
+}
+.main-inner {
+  background-color: rgba(255,255,255,0);
+  padding: 0px 40px 40px 40px;
 }
