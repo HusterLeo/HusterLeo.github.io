@@ -28,7 +28,7 @@
 <meta property="og:description" content="hexo博客优化配置">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-21T13:38:39.000Z">
-<meta property="article:modified_time" content="2026-06-22T04:34:09.158Z">
+<meta property="article:modified_time" content="2026-06-27T23:22:29.270Z">
 <meta property="article:author" content="Leo">
 <meta name="twitter:card" content="summary">
 
@@ -222,7 +222,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-06-22 12:34:09" itemprop="dateModified" datetime="2026-06-22T12:34:09+08:00">2026-06-22</time>
+      <time title="修改时间：2026-06-28 07:22:29" itemprop="dateModified" datetime="2026-06-28T07:22:29+08:00">2026-06-28</time>
     </span>
 
   
@@ -239,14 +239,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.3k</span>
+      <span>1.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
+      <span>6 分钟</span>
     </span>
 </div>
 
@@ -312,7 +312,8 @@
 <p>在hexo根目录的source文件夹下创建_data&#x2F;styles.styl文件，在文件中增加utterances属性</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.utterances</span> &#123;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">100%</span> <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span> <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里遇到一个bug，本地运行时更改生效，部署至github不生效。最后发现和hexo生成命令有关。<code>hexo c &amp;&amp; hexo g</code>命令不更新public文件夹下css资源，使用<code>hexo clean &amp;&amp; hexo generate</code>命令会成功更新。暂不清楚原因</p>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>自定义样式<code>source/_data/styles.styl</code>中增加配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">.sidebar &#123;</span><br><span class="line">  background: rgba(255, 255, 255, 0.85);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">body &#123;</span><br><span class="line">    background:url(/images/3.png);</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-attachment: fixed; //是否滚动，fixed固定</span><br><span class="line">    background-size: cover;      //填充</span><br><span class="line">    background-position: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//文章背板的颜色rgb</span><br><span class="line">.main-inner &gt; .sub-menu, .main-inner &gt; .post-block, .main-inner &gt; .tabs-comment, .main-inner &gt; .comments, .main-inner &gt; .pagination&#123;</span><br><span class="line">    background: #f5f5f56b;      //此处使用十六进制颜色代码，         也可以使用rgba进行调色，</span><br><span class="line">                                //实际效果为白色透明色底板              rgba的第四参数即为透明度</span><br><span class="line">&#125;</span><br><span class="line">body&#123;               //修改主体字体颜色</span><br><span class="line">  color: #000;      //纯黑</span><br><span class="line">&#125;</span><br><span class="line">.posts-expand .post-title-link &#123;    //标题颜色</span><br><span class="line">    color: #000;                //首页文章标题颜色， （默认为灰辨识度不高）</span><br><span class="line">&#125;</span><br><span class="line">.posts-expand .post-meta-container &#123;    //标题下的日期颜色</span><br><span class="line">    color: #880000;             //此处修改为红色，可自行调用rgb调色</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//侧边框的透明度设置</span><br><span class="line">.sidebar &#123;</span><br><span class="line">  opacity: 0.7;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//菜单栏的调色</span><br><span class="line">.header-inner &#123;     </span><br><span class="line">  background: rgba(255,255,255,0.7);</span><br><span class="line">&#125;</span><br><span class="line">//搜索框透明</span><br><span class="line">.popup &#123;        </span><br><span class="line">  opacity: 0.5;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.main-inner &#123;</span><br><span class="line">    background-color: rgba(255, 255, 255, 0);  //主体背景透明</span><br><span class="line">    padding: 0px 40px 40px 40px;  //调整组件位置</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -361,13 +362,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">10k</span>
+    <span title="站点总字数">11k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">38 分钟</span>
+    <span title="站点阅读时长">39 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">

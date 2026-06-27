@@ -1385,7 +1385,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffff9f;
+    background: #d22057;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2924,7 +2924,7 @@ header.header {
   background: rgba(255,255,255,0.85);
 }
 body {
-  background: url("/images/109.jpg");
+  background: url("/images/3.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -2958,4 +2958,12 @@ body {
 .main-inner {
   background-color: rgba(255,255,255,0);
   padding: 0px 40px 40px 40px;
+}
+.post-body p a {
+  color: #0593d3;
+  border-bottom: 1px solid #0593d3;
+}
+.post-body p a:hover {
+  color: #fc6423;
+  border-bottom: 1px solid #fc6423;
 }
