@@ -1385,7 +1385,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #c2f10f;
+    background: #7f8e8e;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2939,13 +2939,16 @@ body {
   background: rgba(245,245,245,0.42);
 }
 body {
-  color: #000;
+  color: #ddd;
 }
 .posts-expand .post-title-link {
-  color: #000;
+  color: #ddd;
 }
 .posts-expand .post-meta-container {
-  color: #800;
+  color: #bbb;
+}
+.post-block {
+  background: rgba(50,50,50,0.6) none repeat scroll !important;
 }
 .sidebar {
   opacity: 0.8;
@@ -2956,19 +2959,18 @@ body {
 .popup {
   opacity: 0.5;
 }
-.post-block {
-  background: rgba(255,255,255,0.6) none repeat scroll !important;
-}
 .main-inner {
   background-color: rgba(255,255,255,0);
   padding: 0px 40px 40px 40px;
 }
+.post-meta-item a,
 .post-body a,
 .article-inner a,
 .post-body p a {
   color: #0593d3;
   border-bottom: 1px solid #0593d3;
 }
+.post-meta-item a:hover,
 .post-body a:hover,
 .article-inner a:hover,
 .post-body p a:hover {
