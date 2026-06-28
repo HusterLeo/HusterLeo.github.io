@@ -22,13 +22,13 @@
 
     <meta name="description" content="粗略记录自己搭建hexo的过程，一些会用到的配置，需要注意的一些事情">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo+next+github博客搭建">
+<meta property="og:title" content="Hexo+Next+Github博客搭建">
 <meta property="og:url" content="https://husterleo.github.io/2026/04/21/build-blog/index.html">
 <meta property="og:site_name" content="Leo&#39;s Blog">
 <meta property="og:description" content="粗略记录自己搭建hexo的过程，一些会用到的配置，需要注意的一些事情">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-04-20T21:49:12.000Z">
-<meta property="article:modified_time" content="2026-06-22T04:27:01.745Z">
+<meta property="article:modified_time" content="2026-06-28T00:14:15.652Z">
 <meta property="article:author" content="Leo">
 <meta name="twitter:card" content="summary">
 
@@ -36,10 +36,10 @@
 <link rel="canonical" href="https://husterleo.github.io/2026/04/21/build-blog/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://husterleo.github.io/2026/04/21/build-blog/","path":"2026/04/21/build-blog/","title":"hexo+next+github博客搭建"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://husterleo.github.io/2026/04/21/build-blog/","path":"2026/04/21/build-blog/","title":"Hexo+Next+Github博客搭建"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>hexo+next+github博客搭建 | Leo's Blog</title>
+<title>Hexo+Next+Github博客搭建 | Leo's Blog</title>
   
 
 
@@ -135,6 +135,8 @@
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Leo"
+      src="/images/2.jpeg">
   <p class="site-author-name" itemprop="name">Leo</p>
   <div class="site-description" itemprop="description">向远方，星夜兼程</div>
 </div>
@@ -189,7 +191,7 @@
     <link itemprop="mainEntityOfPage" href="https://husterleo.github.io/2026/04/21/build-blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/2.jpeg">
       <meta itemprop="name" content="Leo">
     </span>
 
@@ -199,12 +201,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="hexo+next+github博客搭建 | Leo's Blog">
+      <meta itemprop="name" content="Hexo+Next+Github博客搭建 | Leo's Blog">
       <meta itemprop="description" content="粗略记录自己搭建hexo的过程，一些会用到的配置，需要注意的一些事情">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          hexo+next+github博客搭建
+          Hexo+Next+Github博客搭建
         </h1>
 
         <div class="post-meta-container">
@@ -222,7 +224,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-06-22 12:27:01" itemprop="dateModified" datetime="2026-06-22T12:27:01+08:00">2026-06-22</time>
+      <time title="修改时间：2026-06-28 08:14:15" itemprop="dateModified" datetime="2026-06-28T08:14:15+08:00">2026-06-28</time>
     </span>
 
   
@@ -300,8 +302,12 @@
 <h3 id="基本主题优化"><a href="#基本主题优化" class="headerlink" title="基本主题优化"></a>基本主题优化</h3><p>若没明确说明，这里的配置修改均在_config.next.yml文件中进行</p>
 <h4 id="修改主题默认样式"><a href="#修改主题默认样式" class="headerlink" title="修改主题默认样式"></a>修改主题默认样式</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment"># scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br></pre></td></tr></table></figure>
 <p>scheme默认为Muse，并非官网风格，这里改为Gemini，更为美观</p>
-<h4 id="修改图标"><a href="#修改图标" class="headerlink" title="修改图标"></a>修改图标</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="comment"># small: /images/favicon-16x16-next.png</span></span><br><span class="line">  <span class="comment"># medium: /images/favicon-32x32-next.png</span></span><br><span class="line">  <span class="comment"># apple_touch_icon: /images/apple-touch-icon-next.png</span></span><br><span class="line">  <span class="comment"># safari_pinned_tab: /images/logo.svg</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/1.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/1.png</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/1.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/1.png</span></span><br></pre></td></tr></table></figure>
-<p>在source文件夹下新建images文件夹，将所需照片1.png放入其中，修改引用即可。这里原始配置引用的图片在next主题相应文件夹中，直接在根目录source下新建images文件夹也可直接引用</p>
+<h4 id="修改图标"><a href="#修改图标" class="headerlink" title="修改图标"></a>修改图标</h4><p>网站图标：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="comment"># small: /images/favicon-16x16-next.png</span></span><br><span class="line">  <span class="comment"># medium: /images/favicon-32x32-next.png</span></span><br><span class="line">  <span class="comment"># apple_touch_icon: /images/apple-touch-icon-next.png</span></span><br><span class="line">  <span class="comment"># safari_pinned_tab: /images/logo.svg</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/1.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/1.png</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/1.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/1.png</span></span><br></pre></td></tr></table></figure>
+<p>增加并设置个人头像</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/2.jpeg</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be displayed in circle.</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be rotated with the cursor.</span></span><br><span class="line">  <span class="attr">rotated:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>在source文件夹下新建images文件夹，将所需图片放入其中，修改引用即可。这里原始配置引用的图片在next主题相应文件夹中，直接在根目录source下新建images文件夹也可直接引用</p>
 <h4 id="菜单"><a href="#菜单" class="headerlink" title="菜单"></a>菜单</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="comment">#tags: /tags/ || fa fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://xxx</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-github</span></span><br><span class="line">  <span class="attr">Bilibili:</span> <span class="string">https://xxx</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-youtube</span></span><br><span class="line">  <span class="comment"># E-Mail: mailto:yourname@gmail.com || fa fa-envelope</span></span><br><span class="line">  <span class="comment">#Weibo: https://weibo.com/yourname || fab fa-weibo</span></span><br><span class="line">  <span class="comment">#Twitter: https://twitter.com/yourname || fab fa-twitter</span></span><br></pre></td></tr></table></figure>
@@ -328,8 +334,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2026/06/21/theme-optimize/" rel="next" title="next主题优化">
-                  next主题优化 <i class="fa fa-angle-right"></i>
+                <a href="/2026/06/21/theme-optimize/" rel="next" title="Next主题优化">
+                  Next主题优化 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
