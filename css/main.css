@@ -1385,7 +1385,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #7f8e8e;
+    background: #ffdbfa;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2967,15 +2967,15 @@ body {
 .post-body a,
 .article-inner a,
 .post-body p a {
-  color: #0593d3;
-  border-bottom: 1px solid #0593d3;
+  color: #ccc;
+  border-bottom: 1px solid #ccc;
 }
 .post-meta-item a:hover,
 .post-body a:hover,
 .article-inner a:hover,
 .post-body p a:hover {
-  color: #fc6423;
-  border-bottom: 1px solid #fc6423;
+  color: #fff;
+  border-bottom: 1px solid #fff;
 }
 .footer,
 .footer-inner {
